@@ -1,0 +1,227 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 15px;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #ffe0ec, #e6ddff, #fff1c9);
+    font-family: 'Poppins', sans-serif;
+}
+
+.birthday-card {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px 35px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
+    box-shadow: 0 15px 45px rgba(130, 80, 150, 0.15);
+    animation: appear 1s ease;
+}
+
+.cake {
+    font-size: 75px;
+    animation: bounce 2s infinite;
+}
+
+.small-heading {
+    margin-top: 10px;
+    color: #a06ac4;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin-top: 15px;
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(32px, 7vw, 48px);
+    line-height: 1.2;
+    color: #633b8d;
+}
+
+h1 span {
+    display: block;
+    color: #f06a9b;
+}
+
+h2 {
+    margin-top: 15px;
+    color: #8056a6;
+    font-family: 'Baloo 2', cursive;
+}
+
+.message {
+    margin: 18px auto;
+    max-width: 450px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.divider {
+    margin: 25px 0;
+    font-size: 25px;
+}
+
+.wish {
+    padding: 20px;
+    background: #fff4f8;
+    border-radius: 18px;
+}
+
+.wish h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #e66b99;
+}
+
+.wish p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.wish .highlight {
+    margin-top: 15px;
+    color: #9256ad;
+    font-weight: 600;
+}
+
+button {
+    margin-top: 25px;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #ed75a2;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #d95589;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(237, 117, 162, 0.3);
+}
+
+#surprise-message {
+    margin-top: 20px;
+    color: #9256ad;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.footer {
+    margin-top: 30px;
+    color: #a58ab8;
+    font-size: 12px;
+}
+
+/* Floating balloons */
+
+.balloons span {
+    position: fixed;
+    bottom: -100px;
+    font-size: 45px;
+    animation: float 9s linear infinite;
+    z-index: 1;
+}
+
+.balloons span:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.balloons span:nth-child(2) {
+    left: 25%;
+    animation-delay: 3s;
+}
+
+.balloons span:nth-child(3) {
+    left: 50%;
+    animation-delay: 1s;
+}
+
+.balloons span:nth-child(4) {
+    left: 75%;
+    animation-delay: 4s;
+}
+
+.balloons span:nth-child(5) {
+    left: 90%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-120vh) rotate(30deg);
+    }
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Confetti */
+
+.confetti {
+    position: fixed;
+    top: -15px;
+    width: 10px;
+    height: 10px;
+    z-index: 10;
+    pointer-events: none;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+    .birthday-card {
+        padding: 30px 20px;
+    }
+
+    .cake {
+        font-size: 60px;
+    }
+
+    .wish {
+        padding: 17px;
+    }
+}
